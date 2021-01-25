@@ -24,7 +24,12 @@ class _FirstPageState extends State<FirstPage> {
 
   void deleteValue() {
     setState(() {
-      value = value.substring(value.length - 1);
+      if (value != "0") {
+        value = value.substring(0, value.length - 1);
+      }
+      if (value.isEmpty) {
+        value = "0";
+      }
     });
   }
 
